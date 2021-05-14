@@ -24,5 +24,5 @@ bye <- function(param) {
 
 
 personalInfo <- function(nombre, edad) {
-  print("Hola, mi nombre es " + nombre + " y tengo " + edad + " años.")
+  print("Hola, mi nombre es " , nombre , " y tengo " , edad , " años.")
 }
