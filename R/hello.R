@@ -12,18 +12,10 @@
 #   Install Package:           'Ctrl + Shift + B'
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
+# cycle, program, answers, control, lab
+program <- function() {
 
-hello <- function() {
-  print("Hola!")
+  response = c(color_code='#fff', piv=runif(1, min=0, max=100))
+  print(response)
 }
 
-
-bye <- function(param) {
-  print(param)
-}
-
-
-personalInfo <- function(nombre, edad) {
-  paste("Hola, mi nombre es " , nombre , " y tengo " , edad , " años.")
-  paste("Hola, mi nombre es " , nombre , " y tengo " , edad , " años.")
-}
