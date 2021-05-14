@@ -21,3 +21,8 @@ hello <- function() {
 bye <- function(param) {
   print(param)
 }
+
+
+personal-info <- function(nombre, edad) {
+  print("Hola, mi nombre es " + nombre + " y tengo " + edad + " años.")
+}
