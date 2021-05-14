@@ -25,4 +25,5 @@ bye <- function(param) {
 
 personalInfo <- function(nombre, edad) {
   paste("Hola, mi nombre es " , nombre , " y tengo " , edad , " años.")
+  paste("Hola, mi nombre es " , nombre , " y tengo " , edad , " años.")
 }
