@@ -18,6 +18,6 @@ hello <- function() {
 }
 
 
-bye <- function() {
-  print("Adios!")
+bye <- function(param) {
+  print(param)
 }
