@@ -15,7 +15,7 @@
 # cycle, program, answers, control, lab
 program <- function() {
 
-  response = c(color_code='#06fdfe', piv=runif(1, min=0, max=100))
+  response <- c(color_code='#fff', piv=runif(1, min=0, max=100))
   print(response)
 }
 
