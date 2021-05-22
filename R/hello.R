@@ -19,3 +19,26 @@ program <- function() {
   print(response)
 }
 
+
+# Funcion evaluacionPreliminar()
+# Entradas: IdLaboratorio
+#           cicloReporte
+#           IdPrograma
+#           IdReporte
+#           IdAnalizador
+library(jsonlite)
+piv_preliminar <- function(i_ciclo,i_programa,i_reporte,i_analizador) {
+  id_reporte<-c(i_reporte)
+  #Leer de base de datos resultados de analitos para calcular iv
+  iv_analitos<-runif(10,min=0,max=300)
+  iv_analitos<-round(iv_analitos)
+  #Calcular promedio del programa
+  piv<-mean(iv_analitos)
+  piv<-round(piv)
+  #identificar analitos
+  id_analitos<-c("A1","A2","A3","A4","A5","A6","A7","A8","A9","A10")
+  df <- data.frame(id_reporte,piv,id_analitos,iv_analitos)
+  #regresar JSON
+  df_json<-toJSON(df)
+  return(df_json)
+}
