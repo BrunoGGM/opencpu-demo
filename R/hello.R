@@ -36,7 +36,7 @@ piv_preliminar <- function(i_ciclo,i_programa,i_reporte,i_analizador) {
   piv<-mean(iv_analitos)
   piv<-round(piv)
   #identificar analitos
-  id_analitos<-c("27353-2","10-9","100-8","1000-9","1002-5","1004-1","1010-8","1024-9","10330-9","10340-8")
+  id_analitos<-c("41653-7","2345-7","55420-4","4548-4","27353-2","14957-5","2514-8","5792-7","9057-1","55400-6")
   df <- data.frame(id_reporte,piv,id_analitos,iv_analitos)
 
   return(df)
