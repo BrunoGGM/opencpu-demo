@@ -26,7 +26,7 @@ program <- function() {
 #           IdPrograma
 #           IdReporte
 #           IdAnalizador
-library(jsonlite)
+
 piv_preliminar <- function(i_ciclo,i_programa,i_reporte,i_analizador) {
   id_reporte<-c(i_reporte)
   #Leer de base de datos resultados de analitos para calcular iv
@@ -39,6 +39,6 @@ piv_preliminar <- function(i_ciclo,i_programa,i_reporte,i_analizador) {
   id_analitos<-c("A1","A2","A3","A4","A5","A6","A7","A8","A9","A10")
   df <- data.frame(id_reporte,piv,id_analitos,iv_analitos)
   #regresar JSON
-  df_json<-toJSON(df)
-  return(df_json)
+
+  return df
 }
