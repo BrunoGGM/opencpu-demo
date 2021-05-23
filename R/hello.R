@@ -13,6 +13,9 @@
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
 # cycle, program, answers, control, lab
+library(jsonlite)
+library(ggplot2)
+
 program <- function() {
 
   response <- c(color_code='#ffffff0', piv=runif(1, min=0, max=100))
@@ -42,7 +45,6 @@ piv_preliminar <- function(i_ciclo,i_programa,i_reporte,i_analizador) {
   return(df)
 }
 
-library(ggplot2)
 
 radar <- function(i_ciclo,i_programa,i_reporte,i_analizador) {
   iv_analitos <- as.data.frame(matrix(round(runif(20,min=0,max=300)) , ncol=20))
