@@ -13,8 +13,6 @@
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
 # cycle, program, answers, control, lab
-library(jsonlite)
-library(ggplot2)
 
 program <- function() {
 
@@ -54,5 +52,22 @@ radar <- function(i_ciclo,i_programa,i_reporte,i_analizador) {
 
   # The default radar chart
   radarchart(iv_analitos,pcol='pink',pfcol=rgb(0.9,0.2,0.5,0.3),cglcol='grey',cglty=1)
+}
+
+plot_test <- function() {
+  set.seed(42)
+  data("mtcars")
+  dat2 <- subset(mtcars, wt > 3 & wt < 4)
+  # Hide all of the text labels.
+  dat2$car <- ""
+  # Let's just label these items.
+  ix_label <- c(2,3,16)
+  dat2$car[ix_label] <- rownames(dat2)[ix_label]
+
+  g1 <- ggplot(dat2, aes(wt, mpg, label = car)) +
+    geom_point(color = ifelse(dat2$car == "", "grey50", "red")) +
+    geom_text_repel()
+
+  print(g1)
 }
 
