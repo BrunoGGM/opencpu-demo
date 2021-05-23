@@ -42,6 +42,7 @@ piv_preliminar <- function(i_ciclo,i_programa,i_reporte,i_analizador) {
   return(df)
 }
 
+library(ggplot2)
 
 radar <- function(i_ciclo,i_programa,i_reporte,i_analizador) {
   iv_analitos <- as.data.frame(matrix(round(runif(20,min=0,max=300)) , ncol=20))
@@ -50,33 +51,6 @@ radar <- function(i_ciclo,i_programa,i_reporte,i_analizador) {
   iv_analitos <- rbind(rep(300,10) , rep(0,10) , iv_analitos)
 
   # The default radar chart
-  return(radarchart(iv_analitos,pcol='pink',pfcol=rgb(0.9,0.2,0.5,0.3),cglcol='grey',cglty=1))
-}
-
-gitstats <- function (id = "hadley", type = c("users", "orgs"), max = 20) {
-
-  type <- match.arg(type, choices=c('users','orgs'))
-  max <- min(max, 100)
-
-  #the 'gh' package automatically paginates
-  url <- file.path("https://api.github.com", type, id, "repos")
-  res <- gh::gh(url, type = "owner", .limit = Inf)
-  out <- jsonlite:::simplify(res, flatten = TRUE)
-
-  #resort factor)
-  out <- out[order(out$watchers, decreasing = TRUE)[seq_len(max)],
-             c("name", "watchers", "forks", "open_issues")]
-  out$name <- factor(out$name, levels = rev(out$name))
-
-  #reshape to "long" dataframe"
-  names(out) <- c("Repo", "Stars", "Forks", "Issues")
-  out2 <- reshape2::melt(out, id = 1)
-
-  #create ggplot object
-  time <- format(Sys.time(), tz = 'UTC', usetz = TRUE)
-  ggplot(out2, aes(Repo, value)) + geom_bar(stat="identity") + coord_flip() +
-    facet_wrap(~variable, scales = "free_x") + xlab("") + ylab("") +
-    ggtitle(sprintf("Github stats from: '%s' (%s)", id, time))
-
+  radarchart(iv_analitos,pcol='pink',pfcol=rgb(0.9,0.2,0.5,0.3),cglcol='grey',cglty=1)
 }
 
