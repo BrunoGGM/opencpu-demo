@@ -50,6 +50,6 @@ radar <- function(i_ciclo,i_programa,i_reporte,i_analizador) {
   iv_analitos <- rbind(rep(300,10) , rep(0,10) , iv_analitos)
 
   # The default radar chart
-  radarchart(iv_analitos,pcol='pink',pfcol=rgb(0.9,0.2,0.5,0.3),cglcol='grey',cglty=1)
+  return(radarchart(iv_analitos,pcol='pink',pfcol=rgb(0.9,0.2,0.5,0.3),cglcol='grey',cglty=1))
 }
 
