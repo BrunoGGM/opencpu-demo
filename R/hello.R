@@ -41,3 +41,15 @@ piv_preliminar <- function(i_ciclo,i_programa,i_reporte,i_analizador) {
 
   return(df)
 }
+
+
+radar <- function(i_ciclo,i_programa,i_reporte,i_analizador) {
+  iv_analitos <- as.data.frame(matrix(round(runif(20,min=0,max=300)) , ncol=20))
+  colnames(iv_analitos) <- c("A1","A2","A3","A4","A5","A6","A7","A8","A9","A10","A11","A12","A13","A14","A15","A16","A17","A18","A19","A20")
+
+  iv_analitos <- rbind(rep(300,10) , rep(0,10) , iv_analitos)
+
+  # The default radar chart
+  radarchart(iv_analitos,pcol='pink',pfcol=rgb(0.9,0.2,0.5,0.3),cglcol='grey',cglty=1)
+}
+
