@@ -42,6 +42,7 @@ piv_preliminar <- function(i_ciclo,i_programa,i_reporte,i_analizador) {
   return(df)
 }
 
+library(ggplot2)
 
 radar <- function(i_ciclo,i_programa,i_reporte,i_analizador) {
   iv_analitos <- as.data.frame(matrix(round(runif(20,min=0,max=300)) , ncol=20))
