@@ -22,8 +22,7 @@ program <- function() {
 
 # test function
 test <- function(object) {
-  
-  typeof(object)
+  print(object['analitos'])
 }
 
 
