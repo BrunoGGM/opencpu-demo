@@ -20,6 +20,12 @@ program <- function() {
   print(response)
 }
 
+# test function
+test <- function(object) {
+  
+  print(object)
+}
+
 
 # Funcion evaluacionPreliminar()
 # Entradas: IdLaboratorio
