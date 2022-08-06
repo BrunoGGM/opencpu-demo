@@ -23,7 +23,7 @@ program <- function() {
 # test function
 test <- function(object) {
   
-  print(object)
+  print(object->analitos)
 }
 
 
